@@ -1,15 +1,12 @@
-name: 'Hello World'
-description: 'Greet someone and record the time'
+name: 'echo'
+description: 'write arguments to the standard output'
 inputs:
-  who-to-greet:  # id of input
-    description: 'Who to greet'
+  s:  # id of input
+    description: '[string]'
     required: true
-    default: 'World'
-outputs:
-  time: # id of output
-    description: 'The time we greeted you'
+    default: ''
 runs:
   using: 'docker'
   image: 'Dockerfile'
   args:
-    - ${{ inputs.who-to-greet }}
+    - ${{ inputs.s }}
